@@ -32,3 +32,16 @@ the Slot Duration field directly.
 ## 6- Status (Fieldtype- Picklist, for the status of appointment record)
 
 ## 7- Notes (Fieldtype- Text(Long))
+
+## 8- Issue Type (Fieldtype- Formula)
+
+Formula: TEXT(Patient__r.Medical_Issue_Type__c)
+
+Why: Salesforce does not allow to fetch the values of a Picklist in a formula field by itself.
+To recieve a valid input from a picklist in a formula field we must wrap the syntax in a TEXT() annotation
+to convert picklist value into a Text data type.
+
+Need: We will need this field to be able to automatically Map the right patient to the right doctor without point and clicking 
+every time when creating a new appointment record with a flow.
+
+## 9- 
